@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# WXT
+.wxt/
+.output/
+
+# Build
+dist/
+
+# Logs
+*.log
+
+# Test coverage
+coverage/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+
+# Override global gitignore Icon pattern for extension icons
+!public/icon/
