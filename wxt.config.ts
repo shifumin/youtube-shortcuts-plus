@@ -5,5 +5,6 @@ export default defineConfig({
   manifest: {
     name: "YouTube Shortcuts Plus",
     description: "Add keyboard shortcuts for YouTube",
+    permissions: ["storage"],
   },
 });

@@ -1,5 +1,7 @@
 import { clickGyazoCaptureButton, findGyazoCaptureButton } from "@/utils/gyazoCapture";
 import { hasModifierKey, isTypingInTextField } from "@/utils/keyboard";
+import type { ShortcutSettings } from "@/utils/settings";
+import { loadAllSettings, shortcutEnabledItems } from "@/utils/settings";
 import { findVideoElement, toggleVideoLoop } from "@/utils/videoLoop";
 
 const TOAST_ID = "ysp-loop-toast";
@@ -8,7 +10,16 @@ const TOAST_FADE_MS = 300;
 
 export default defineContentScript({
   matches: ["*://*.youtube.com/*"],
-  main(ctx) {
+  async main(ctx) {
+    let settings: ShortcutSettings = await loadAllSettings();
+
+    shortcutEnabledItems.loopToggle.watch((newValue) => {
+      settings = { ...settings, loopToggle: newValue };
+    });
+    shortcutEnabledItems.gyazoCapture.watch((newValue) => {
+      settings = { ...settings, gyazoCapture: newValue };
+    });
+
     let toastTimeout: number | undefined;
 
     const removeToast = (): void => {
@@ -62,6 +73,7 @@ export default defineContentScript({
 
       switch (event.key.toLowerCase()) {
         case "r": {
+          if (!settings.loopToggle) return;
           const video = findVideoElement();
           if (!video) return;
           const loopEnabled = toggleVideoLoop(video);
@@ -69,6 +81,7 @@ export default defineContentScript({
           break;
         }
         case "g": {
+          if (!settings.gyazoCapture) return;
           const button = findGyazoCaptureButton();
           if (!button) return;
           clickGyazoCaptureButton(button);
