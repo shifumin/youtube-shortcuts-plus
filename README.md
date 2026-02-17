@@ -32,6 +32,7 @@ A Chrome extension that adds keyboard shortcuts for YouTube.
 - Disabled when typing in text fields (search bar, comments, etc.)
 - Disabled when modifier keys (Ctrl, Alt, Shift, Cmd) are held
 - `G` key requires the [Gyazo Chrome extension](https://chromewebstore.google.com/detail/gyazo-share-new-screensho/ffdaeeijbbijklfcpahbghahojgfgebo) to be installed
+- Each shortcut can be individually enabled/disabled from the extension popup (click the extension icon)
 
 ## Tech Stack
 

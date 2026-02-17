@@ -10,8 +10,14 @@ YouTube Shortcuts Plus — A Chrome extension that adds keyboard shortcuts for Y
 
 ```
 entrypoints/
-└── content.ts              # Content script for YouTube pages (keyboard shortcut handling)
+├── content.ts              # Content script for YouTube pages (keyboard shortcut handling)
+└── popup/
+    ├── index.html          # Popup page shell
+    ├── main.ts             # Popup logic (toggle switches for each shortcut)
+    └── style.css           # Popup styling
 utils/
+├── settings.ts             # Shortcut settings storage definitions (shared by popup & content)
+├── settings.test.ts        # Unit tests for settings
 ├── keyboard.ts             # Keyboard event helpers (text field detection, modifier keys)
 ├── keyboard.test.ts        # Unit tests for keyboard
 ├── videoLoop.ts            # Video loop toggle logic (pure functions)
