@@ -15,7 +15,9 @@ utils/
 ├── keyboard.ts             # Keyboard event helpers (text field detection, modifier keys)
 ├── keyboard.test.ts        # Unit tests for keyboard
 ├── videoLoop.ts            # Video loop toggle logic (pure functions)
-└── videoLoop.test.ts       # Unit tests for videoLoop
+├── videoLoop.test.ts       # Unit tests for videoLoop
+├── gyazoCapture.ts         # Gyazo capture button interaction (find & click)
+└── gyazoCapture.test.ts    # Unit tests for gyazoCapture
 public/icon/                # Extension icons (16–128px)
 ```
 

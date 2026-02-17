@@ -26,10 +26,12 @@ A Chrome extension that adds keyboard shortcuts for YouTube.
 | Shortcut | Action | Feedback |
 |----------|--------|----------|
 | `R` | Toggle video loop (repeat) | Toast: "Loop: ON" / "Loop: OFF" |
+| `G` | Capture frame with Gyazo | Gyazo extension handles UI |
 
 - Only active on YouTube pages
 - Disabled when typing in text fields (search bar, comments, etc.)
 - Disabled when modifier keys (Ctrl, Alt, Shift, Cmd) are held
+- `G` key requires the [Gyazo Chrome extension](https://chromewebstore.google.com/detail/gyazo-share-new-screensho/ffdaeeijbbijklfcpahbghahojgfgebo) to be installed
 
 ## Tech Stack
 
