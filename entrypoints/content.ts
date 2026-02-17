@@ -1,3 +1,4 @@
+import { clickGyazoCaptureButton, findGyazoCaptureButton } from "@/utils/gyazoCapture";
 import { hasModifierKey, isTypingInTextField } from "@/utils/keyboard";
 import { findVideoElement, toggleVideoLoop } from "@/utils/videoLoop";
 
@@ -56,15 +57,24 @@ export default defineContentScript({
     };
 
     const handleKeyDown = (event: KeyboardEvent): void => {
-      if (event.key !== "r" && event.key !== "R") return;
       if (isTypingInTextField(event)) return;
       if (hasModifierKey(event)) return;
 
-      const video = findVideoElement();
-      if (!video) return;
-
-      const loopEnabled = toggleVideoLoop(video);
-      showToast(loopEnabled ? "Loop: ON" : "Loop: OFF");
+      switch (event.key.toLowerCase()) {
+        case "r": {
+          const video = findVideoElement();
+          if (!video) return;
+          const loopEnabled = toggleVideoLoop(video);
+          showToast(loopEnabled ? "Loop: ON" : "Loop: OFF");
+          break;
+        }
+        case "g": {
+          const button = findGyazoCaptureButton();
+          if (!button) return;
+          clickGyazoCaptureButton(button);
+          break;
+        }
+      }
     };
 
     ctx.addEventListener(document, "keydown", handleKeyDown);
