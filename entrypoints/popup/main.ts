@@ -28,4 +28,13 @@ const renderShortcuts = async (): Promise<void> => {
   }
 };
 
+const renderVersion = (): void => {
+  const footer = document.getElementById("version");
+  if (!footer) return;
+
+  const { version } = browser.runtime.getManifest();
+  footer.textContent = `v${version}`;
+};
+
 renderShortcuts();
+renderVersion();

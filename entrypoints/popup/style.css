@@ -34,3 +34,10 @@ h1 {
   height: 18px;
   cursor: pointer;
 }
+
+#version {
+  margin-top: 12px;
+  text-align: right;
+  font-size: 11px;
+  color: #999;
+}
