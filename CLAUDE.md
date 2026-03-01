@@ -40,6 +40,9 @@ mise exec -- pnpm lint       # Lint and format check (Biome)
 mise exec -- pnpm lint:fix   # Lint and format with auto-fix
 mise exec -- pnpm test       # Run tests (Vitest)
 mise exec -- pnpm zip        # Create ZIP for Chrome Web Store
+mise exec -- pnpm version:patch  # Bump patch version (0.1.0 -> 0.1.1)
+mise exec -- pnpm version:minor  # Bump minor version (0.1.0 -> 0.2.0)
+mise exec -- pnpm version:major  # Bump major version (0.1.0 -> 1.0.0)
 ```
 
 ## Testing Conventions

@@ -34,6 +34,16 @@ A Chrome extension that adds keyboard shortcuts for YouTube.
 - `G` key requires the [Gyazo Chrome extension](https://chromewebstore.google.com/detail/gyazo-share-new-screensho/ffdaeeijbbijklfcpahbghahojgfgebo) to be installed
 - Each shortcut can be individually enabled/disabled from the extension popup (click the extension icon)
 
+## Version Management
+
+```bash
+pnpm version:patch   # 0.1.0 -> 0.1.1 (bug fixes)
+pnpm version:minor   # 0.1.0 -> 0.2.0 (new features)
+pnpm version:major   # 0.1.0 -> 1.0.0 (breaking changes)
+```
+
+Each command updates `package.json`, creates a git commit, and tags it.
+
 ## Tech Stack
 
 - TypeScript
